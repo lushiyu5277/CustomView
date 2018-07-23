@@ -18,8 +18,8 @@ public class MaterialEditText extends android.support.v7.widget.AppCompatEditTex
 
     public MaterialEditText(Context context, AttributeSet attrs) {
         super(context, attrs);
-        mFloatingText = 
-        if (getHint() != null && getHint().length() > 0) {
+        mFloatingText = getHint();
+        if (mFloatingText != null && mFloatingText.length() > 0) {
             setPadding(getPaddingLeft(), getPaddingTop() + HEADER_OFFSET, getPaddingRight(), getPaddingBottom());
         }
     }

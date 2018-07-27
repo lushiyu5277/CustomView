@@ -42,7 +42,7 @@ public class MaskView extends View {
         super(context, attrs);
         paint = new Paint(Paint.ANTI_ALIAS_FLAG);
         paint.setStyle(Paint.Style.FILL);
-        bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.assassin);
+        bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.assassin);
         rectF = new RectF(0, 0, bitmap.getWidth(), bitmap.getHeight());
     }
 

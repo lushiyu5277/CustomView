@@ -40,6 +40,7 @@ public class FlipView extends View {
         super.onDraw(canvas);
         circlePath.reset();
         canvas.save();
+        canvas.translate(-100, 0);
         circlePath.addCircle(getWidth() / 2, getHeight() / 2, cod4Bitmap.getWidth() / 2, Path.Direction.CCW);
         canvas.clipPath(circlePath);
         canvas.drawBitmap(cod4Bitmap, getWidth() / 2 - cod4Bitmap.getWidth() / 2, getHeight() / 2 - cod4Bitmap.getHeight() / 2, paint);

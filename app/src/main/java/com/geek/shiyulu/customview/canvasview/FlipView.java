@@ -40,12 +40,35 @@ public class FlipView extends View {
         super.onDraw(canvas);
         circlePath.reset();
         canvas.save();
-        canvas.translate(-100, 0);
+        canvas.translate(-(getWidth() / 2 - cod4Bitmap.getWidth() / 2), -(getHeight() / 2 - cod4Bitmap.getHeight() / 2));
         circlePath.addCircle(getWidth() / 2, getHeight() / 2, cod4Bitmap.getWidth() / 2, Path.Direction.CCW);
         canvas.clipPath(circlePath);
         canvas.drawBitmap(cod4Bitmap, getWidth() / 2 - cod4Bitmap.getWidth() / 2, getHeight() / 2 - cod4Bitmap.getHeight() / 2, paint);
         canvas.restore();
-//        canvas.drawRect(0, 0, getWidth(), getHeight(), paint);
+
+        canvas.save();
+        canvas.translate(-(getWidth() / 2 - cod6Bitmap.getWidth() ), (getHeight() / 2 - cod6Bitmap.getHeight() ));
+        canvas.scale(2,2, getWidth() / 2, getHeight() / 2);
+        canvas.clipPath(circlePath);
+        canvas.drawBitmap(cod6Bitmap, getWidth() / 2 - cod6Bitmap.getWidth() / 2, getHeight() / 2 - cod6Bitmap.getHeight() / 2, paint);
+        canvas.restore();
+
+        canvas.save();
+//        canvas.clipPath(circlePath);
+//        canvas.rotate(45, getWidth() / 2, getHeight() / 2);
+        canvas.skew(-0.5f, 0f);
+        canvas.drawBitmap(cod6Bitmap, getWidth() / 2 - cod6Bitmap.getWidth() / 2, getHeight() / 2 - cod6Bitmap.getHeight() / 2, paint);
+        canvas.restore();
+
+        canvas.save();
+        canvas.translate(getWidth() / 2 - cod6Bitmap.getWidth() / 2, getHeight() / 2 - cod6Bitmap.getHeight() / 2);
+        canvas.clipPath(circlePath);
+        canvas.rotate(45, getWidth() / 2, getHeight() / 2);
+        canvas.drawBitmap(cod6Bitmap, getWidth() / 2 - cod6Bitmap.getWidth() / 2, getHeight() / 2 - cod6Bitmap.getHeight() / 2, paint);
+        canvas.restore();
+
+        //TODO understand skew and use matrix for view
+
 
     }
 }

@@ -30,7 +30,16 @@
 
     <!--</FrameLayout>-->
 
-    <com.geek.shiyulu.customview.canvasview.FlipView
+    <!--<com.geek.shiyulu.customview.canvasview.FlipView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
+
+    <!--<com.geek.shiyulu.customview.canvasview.ZhihuLogoView-->
+        <!--android:id="@+id/zhihuView"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
+
+    <com.geek.shiyulu.customview.canvasview.CameraRotateView
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

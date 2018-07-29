@@ -47,17 +47,18 @@ public class FlipView extends View {
         canvas.restore();
 
         canvas.save();
-        canvas.translate(-(getWidth() / 2 - cod6Bitmap.getWidth() ), (getHeight() / 2 - cod6Bitmap.getHeight() ));
+//        canvas.translate(-(getWidth() / 2 - cod6Bitmap.getWidth() ), (getHeight() / 2 - cod6Bitmap.getHeight() ));
         canvas.scale(2,2, getWidth() / 2, getHeight() / 2);
-        canvas.clipPath(circlePath);
+        canvas.translate(-50, -50);
+//        canvas.clipPath(circlePath);
         canvas.drawBitmap(cod6Bitmap, getWidth() / 2 - cod6Bitmap.getWidth() / 2, getHeight() / 2 - cod6Bitmap.getHeight() / 2, paint);
         canvas.restore();
 
         canvas.save();
 //        canvas.clipPath(circlePath);
 //        canvas.rotate(45, getWidth() / 2, getHeight() / 2);
-        canvas.skew(-0.5f, 0f);
-        canvas.drawBitmap(cod6Bitmap, getWidth() / 2 - cod6Bitmap.getWidth() / 2, getHeight() / 2 - cod6Bitmap.getHeight() / 2, paint);
+//        canvas.skew(-0.5f, 0f);
+//        canvas.drawBitmap(cod6Bitmap, getWidth() / 2 - cod6Bitmap.getWidth() / 2, getHeight() / 2 - cod6Bitmap.getHeight() / 2, paint);
         canvas.restore();
 
         canvas.save();

@@ -56,27 +56,27 @@ public class CameraRotateView extends View {
         super.onDraw(canvas);
         //绘制上半部分
         canvas.save();
-        path.reset();
-        path.addRect(getWidth() / 2 - cod4Bitmap.getWidth() / 2, getHeight() / 2 - cod4Bitmap.getHeight() / 2, getWidth() / 2 + cod4Bitmap.getWidth() / 2, getHeight() / 2, Path.Direction.CCW);
-        canvas.clipPath(path);
+        canvas.translate(getWidth() / 2, getHeight() / 2);
+        canvas.rotate(degree);
+        canvas.clipRect(-getWidth() / 2, -getHeight() / 2, getWidth() / 2, 0);
+        canvas.rotate(-degree);
+        canvas.translate(-getWidth() / 2, -getHeight() / 2);
         canvas.drawBitmap(cod4Bitmap, getWidth() / 2 - cod4Bitmap.getWidth() / 2, getHeight() / 2 - cod4Bitmap.getHeight() / 2, paint);
         canvas.restore();
 
         //绘制下半部分
-        canvas.save();
-        camera.save();
-        camera.rotateX(30);
-        canvas.translate(getWidth() / 2, getHeight() / 2);
-        canvas.rotate(degree);
-        camera.applyToCanvas(canvas);
-        canvas.rotate(-degree);
-        canvas.translate(-getWidth() / 2, -getHeight() / 2);
-        camera.restore();
-//        path.reset();
-//        path.addRect(getWidth() / 2 - cod4Bitmap.getWidth() / 2, getHeight() / 2, getWidth() / 2 + cod4Bitmap.getWidth() / 2, getHeight() / 2 + cod4Bitmap.getWidth() / 2, Path.Direction.CCW);
-//        canvas.clipPath(path);
-        canvas.drawBitmap(cod4Bitmap, getWidth() / 2 - cod4Bitmap.getWidth() / 2, getHeight() / 2 - cod4Bitmap.getHeight() / 2, paint);
-        canvas.restore();
+//        canvas.save();
+//        camera.save();
+//        camera.rotateX(30);
+//        canvas.translate(getWidth() / 2, getHeight() / 2);
+//        canvas.rotate(degree);
+//        camera.applyToCanvas(canvas);
+//        canvas.rotate(-degree);
+//        canvas.translate(-getWidth() / 2, -getHeight() / 2);
+//        camera.restore();
+////        path.addRect(getWidth() / 2 - cod4Bitmap.getWidth() / 2, getHeight() / 2, getWidth() / 2 + cod4Bitmap.getWidth() / 2, getHeight() / 2 + cod4Bitmap.getWidth() / 2, Path.Direction.CCW);
+//        canvas.drawBitmap(cod4Bitmap, getWidth() / 2 - cod4Bitmap.getWidth() / 2, getHeight() / 2 - cod4Bitmap.getHeight() / 2, paint);
+//        canvas.restore();
     }
 
     @Override

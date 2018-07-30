@@ -65,18 +65,18 @@ public class CameraRotateView extends View {
         canvas.restore();
 
         //绘制下半部分
-//        canvas.save();
-//        camera.save();
-//        camera.rotateX(30);
-//        canvas.translate(getWidth() / 2, getHeight() / 2);
-//        canvas.rotate(degree);
-//        camera.applyToCanvas(canvas);
-//        canvas.rotate(-degree);
-//        canvas.translate(-getWidth() / 2, -getHeight() / 2);
-//        camera.restore();
-////        path.addRect(getWidth() / 2 - cod4Bitmap.getWidth() / 2, getHeight() / 2, getWidth() / 2 + cod4Bitmap.getWidth() / 2, getHeight() / 2 + cod4Bitmap.getWidth() / 2, Path.Direction.CCW);
-//        canvas.drawBitmap(cod4Bitmap, getWidth() / 2 - cod4Bitmap.getWidth() / 2, getHeight() / 2 - cod4Bitmap.getHeight() / 2, paint);
-//        canvas.restore();
+        canvas.save();
+        camera.save();
+        camera.rotateX(60);
+        canvas.translate(getWidth() / 2, getHeight() / 2);
+        canvas.rotate(degree);
+        camera.applyToCanvas(canvas);
+        canvas.clipRect(-getWidth() / 2, 0, getWidth() / 2, getHeight() / 2);
+        canvas.rotate(-degree);
+        canvas.translate(-getWidth() / 2, -getHeight() / 2);
+        camera.restore();
+        canvas.drawBitmap(cod4Bitmap, getWidth() / 2 - cod4Bitmap.getWidth() / 2, getHeight() / 2 - cod4Bitmap.getHeight() / 2, paint);
+        canvas.restore();
     }
 
     @Override

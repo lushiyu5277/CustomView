@@ -13,12 +13,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        logoView = findViewById(R.id.zhihuView);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-//        logoView.startAnimator();
     }
 }

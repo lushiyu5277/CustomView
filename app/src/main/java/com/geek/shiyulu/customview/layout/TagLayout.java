@@ -30,6 +30,7 @@ public class TagLayout extends ViewGroup {
         int widthUsed = 0;
         int heightUsed = 0;
         int lineMaxHeight = 0;
+        int lineWidthUsed = 0;
         int specMode = MeasureSpec.getMode(widthMeasureSpec);
         int specWidth = MeasureSpec.getSize(widthMeasureSpec);
         for (int i = 0; i < getChildCount(); i++) {
@@ -37,9 +38,8 @@ public class TagLayout extends ViewGroup {
             measureChildWithMargins(child, widthMeasureSpec, 0, heightMeasureSpec, heightUsed);
             int childWidth = child.getMeasuredWidth();
             int childHeight = child.getMeasuredHeight();
-            lineMaxHeight = Math.max(lineMaxHeight, childHeight);
-            if (specMode != MeasureSpec.UNSPECIFIED && widthUsed + childWidth > specWidth) {
-                widthUsed = 0;
+            if (specMode != MeasureSpec.UNSPECIFIED && lineWidthUsed + childWidth > specWidth) {
+                lineWidthUsed = 0;
                 heightUsed += lineMaxHeight;
                 lineMaxHeight = 0;
                 measureChildWithMargins(child, widthMeasureSpec, 0, heightMeasureSpec, heightUsed);
@@ -53,8 +53,10 @@ public class TagLayout extends ViewGroup {
             } else {
                 chileRect = childRects.get(i);
             }
-            chileRect.set(widthUsed, heightUsed, widthUsed + childWidth, heightUsed + childHeight);
-            widthUsed += childWidth;
+            chileRect.set(lineWidthUsed, heightUsed, lineWidthUsed + childWidth, heightUsed + childHeight);
+            lineWidthUsed += childWidth;
+            lineMaxHeight = Math.max(lineMaxHeight, childHeight);
+            widthUsed = Math.max(widthUsed, lineWidthUsed);
         }
 
         int width = widthUsed;

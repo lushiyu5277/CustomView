@@ -7,6 +7,22 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorAccent"/>
+        <View
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
     <!--<com.geek.shiyulu.customview.canvasview.PercentView-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent" />-->
@@ -34,24 +50,24 @@
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent" />-->
 
-    <!--<com.geek.shiyulu.customview.canvasview.ZhihuLogoView-->
-        <!--android:id="@+id/zhihuView"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent" />-->
+    <com.geek.shiyulu.customview.canvasview.ZhihuLogoView
+        android:id="@+id/zhihuView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <!--<com.geek.shiyulu.customview.canvasview.CameraRotateView-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent" />-->
 
-    <android.support.v4.view.ViewPager
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <!--<android.support.v4.view.ViewPager-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
 
-        <android.support.v4.view.PagerTitleStrip
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top"/>
+        <!--<android.support.v4.view.PagerTitleStrip-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="top"/>-->
 
-    </android.support.v4.view.ViewPager>
+    <!--</android.support.v4.view.ViewPager>-->
 
 </LinearLayout>

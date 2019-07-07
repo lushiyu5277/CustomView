@@ -74,6 +74,6 @@ public class TagLayout extends ViewGroup {
 
     @Override
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
-        return new MarginLayoutParams(getContext(), attrs); //作用是什么？
+        return new MarginLayoutParams(getContext(), attrs); //作用是什么:measureChildWithMargins
     }
 }

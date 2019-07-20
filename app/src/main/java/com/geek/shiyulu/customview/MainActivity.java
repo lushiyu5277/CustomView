@@ -11,7 +11,7 @@ import com.geek.shiyulu.customview.adapter.ViewFragmentPagerAdapter;
 public class MainActivity extends AppCompatActivity {
 
     TabLayout tabLayout;
-    String[] tabTitle = {"DashBoadView", "FlipView", "TagLayout"};
+    String[] tabTitle = {"SurfaceView", "DashBoadView", "FlipView", "TagLayout" };
     ViewPager mViewPager;
     PagerTabStrip mPagerTabStrip;
 
@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         mViewPager = findViewById(R.id.view_pager);
         mPagerTabStrip = findViewById(R.id.pager_tab_strip);
         mViewPager.setAdapter(new ViewFragmentPagerAdapter(getSupportFragmentManager(),tabTitle));
+//        mViewPager.setOnPageChangeListener();
     }
 
     @Override

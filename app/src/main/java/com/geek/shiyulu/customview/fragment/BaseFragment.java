@@ -81,5 +81,19 @@ public abstract class BaseFragment extends Fragment {
         Log.i(getFragmentName(), "onDestroy");
     }
 
+    public int countView(View view) {
+        if (view == null) {
+            return 0;
+        }
+        int total = 1;
+        if (view instanceof ViewGroup) {
+            ViewGroup viewGroup = (ViewGroup)view;
+            for (int i = 0; i < viewGroup.getChildCount(); i++) {
+                total += countView(viewGroup.getChildAt(i));
+            }
+        }
+        return total;
+    }
+
 
 }

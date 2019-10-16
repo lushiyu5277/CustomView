@@ -55,6 +55,10 @@ public class ZhihuLogoView extends View {
         animator.start();
     }
 
+    public void stopAnimator() {
+        animator.cancel();
+    }
+
     public float getAngle() {
         return angle;
     }

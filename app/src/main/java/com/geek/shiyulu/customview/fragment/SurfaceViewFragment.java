@@ -11,6 +11,7 @@ import com.geek.shiyulu.customview.R;
 import com.geek.shiyulu.customview.canvasview.CountSurfaceView;
 import com.geek.shiyulu.customview.canvasview.ZhihuLogoView;
 
+
 public class SurfaceViewFragment extends BaseFragment {
 
 //    private CountSurfaceView surfaceView;
@@ -19,6 +20,7 @@ public class SurfaceViewFragment extends BaseFragment {
     @Override
     public String getFragmentName() {
         return "SurfaceViewFragment";
+//        HashMap
     }
 
     @Nullable
@@ -28,9 +30,21 @@ public class SurfaceViewFragment extends BaseFragment {
         View rootView = inflater.inflate(R.layout.fragment_surfaceview, null);
 //        surfaceView = rootView.findViewById(R.id.surface_view);
 //        surfaceView.setZOrderOnTop(true);
+//        surfaceView.setZOrderMediaOverlay(true);
         zhihuLogoView = rootView.findViewById(R.id.zhihu_view);
-        zhihuLogoView.startAnimator();
         return rootView;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        zhihuLogoView.startAnimator();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        zhihuLogoView.stopAnimator();
     }
 
     @Override

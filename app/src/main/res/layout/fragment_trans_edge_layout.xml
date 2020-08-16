@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    android:id="@+id/activity_test_translucence"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/trans_edge_bg"
+    android:padding="50dp">
+
+    <com.geek.shiyulu.customview.layout.TransEdgeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:edge_width="30dp"
+        app:edge_position="top|bottom">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="20dp"
+                android:paddingTop="20dp"
+                android:text="@string/trans_edge_test_str"
+                android:textColor="#fff"
+                android:textSize="20sp"/>
+
+        </android.support.v4.widget.NestedScrollView>
+    </com.geek.shiyulu.customview.layout.TransEdgeLayout>
+</RelativeLayout>

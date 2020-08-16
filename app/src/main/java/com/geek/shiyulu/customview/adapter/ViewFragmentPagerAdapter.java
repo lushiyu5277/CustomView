@@ -10,6 +10,7 @@ import com.geek.shiyulu.customview.fragment.DashBoardViewFragment;
 import com.geek.shiyulu.customview.fragment.FlipViewFragment;
 import com.geek.shiyulu.customview.fragment.SurfaceViewFragment;
 import com.geek.shiyulu.customview.fragment.TagLayoutFragment;
+import com.geek.shiyulu.customview.fragment.TransEdgeFragment;
 
 public class ViewFragmentPagerAdapter extends FragmentPagerAdapter {
 
@@ -25,7 +26,7 @@ public class ViewFragmentPagerAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         switch (mNameList[position]) {
-            case "DashBoadView":
+            case "DashBoardView":
                 Log.i(TAG, "new DashBoardViewFragment");
                 return new DashBoardViewFragment();
             case "FlipView":
@@ -36,6 +37,8 @@ public class ViewFragmentPagerAdapter extends FragmentPagerAdapter {
                 return new TagLayoutFragment();
             case "SurfaceView":
                 return new SurfaceViewFragment();
+            case "TransEdgeFragment":
+                return new TransEdgeFragment();
         }
         return new TagLayoutFragment();
 

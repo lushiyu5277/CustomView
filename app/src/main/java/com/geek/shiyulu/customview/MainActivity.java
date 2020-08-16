@@ -11,7 +11,7 @@ import com.geek.shiyulu.customview.adapter.ViewFragmentPagerAdapter;
 public class MainActivity extends AppCompatActivity {
 
     TabLayout tabLayout;
-    String[] tabTitle = {"SurfaceView", "DashBoadView", "FlipView", "TagLayout" };
+    String[] tabTitle = {"TransEdgeFragment","DashBoardView", "FlipView", "TagLayout" };
     ViewPager mViewPager;
     PagerTabStrip mPagerTabStrip;
 
